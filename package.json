@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "pretest": "rimraf newman",
+    "can-i-deploy": "pact-broker can-i-deploy --pacticipant example-bi-directional-provider-postman --version=\"$(npx @pact-foundation/absolute-version)\" --to-environment production",
     "test:newman": "newman run -e ./test/localhost3001.postman_environment.json test/PactflowProductsAPI.postman_collection.json -r cli,json",
     "test": "concurrently -k -s \"first\" \"npm start\" \"sleep 3 && npm run test:newman\"",
     "test:convert": "node test/transform.js",
