@@ -1,11 +1,11 @@
-name: Test & Upload to PactFlow
+name: Build
 
 on:
   push:
   workflow_dispatch:
 
 env:
-  PACT_BROKER_BASE_URL: https://testdemo.pactflow.io
+  PACT_BROKER_BASE_URL: https://company123.pactflow.io
   PACT_BROKER_TOKEN: ${{ secrets.PACTFLOW_TOKEN_FOR_CI_CD_WORKSHOP }}
   PACT_BROKER_PUBLISH_VERIFICATION_RESULTS: true
   VERSION: ${{ github.sha }}
